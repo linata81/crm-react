@@ -1,0 +1,44 @@
+{
+  "DB": {
+    "bids" :
+      [
+        {
+          "id": 1,
+          "date": "19.01.2022",
+          "product": "Кухня",
+          "status": "Новый",
+          "name": "Maksim",
+          "email":"info@rightblog.ru",
+          "phone": "+7(909)77-55-777"
+        },
+        {
+          "id": 2,
+          "date": "02.02.2022",
+          "product": "Гостиная",
+          "status": "В работе",
+          "name": "Наталья",
+          "email":"info@rightblog.ru",
+          "phone": "+7(909)77-00-111"
+        },
+        {
+          "id": 3,
+          "date": "15.03.2022",
+          "product": "Шкаф-купе",
+          "status": "Завершен",
+          "name": "Юлия",
+          "email":"info@rightblog.ru",
+          "phone": "+7(905)77-55-321"
+        },
+        {
+          "id": 4,
+          "date": "02.02.2020",
+          "product": "Гостиная",
+          "status": "Архивный",
+          "name": "Оксана",
+          "email":"info@rightblog.ru",
+          "phone": "+7(909)01-01-777"
+        }
+      ],
+    "idCounter": 5
+  }
+}

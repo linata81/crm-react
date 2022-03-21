@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import LeftPanel from './components/LeftPanel';
+import AllBids from './components/AllBids';
+import EditBid from './components/EditBid';
+import NewBid from './components/NewBid';
+import BidsbaseState from './context/BidsbaseState';
 import './App.css';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BidsbaseState>
+      <BrowserRouter>
+        <div className="App">
+          <LeftPanel/>
+          <Routes>
+            <Route path='/' element={<AllBids />}/>
+            <Route path='/crm-edit-bids' element={<EditBid />}/>
+            <Route path='/crm-new-bid' element={<NewBid />}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </BidsbaseState>
   );
 }
 
