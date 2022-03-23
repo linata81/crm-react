@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const TableItem = ({bid}) => {
+const TableItem = ({bid, num}) => {
   let classNames = 'badge rounded-pill';
   switch(bid.status) {
     case 'Новый' : 
@@ -22,7 +22,7 @@ const TableItem = ({bid}) => {
   
   return (
     <tr>
-      <th scope="row">{bid.id}</th>
+      <th scope="row">{num}</th>
       <td>{bid.date}</td>
       <td>{bid.product}</td>
       <td>{bid.name}</td>

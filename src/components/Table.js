@@ -5,8 +5,8 @@ import TableItem from './TableItem';
 const Table = () => {
   const {bids} = useContext(BidsbaseContext);
 
-  const elements = bids.map(item => {
-    return <TableItem key={item.id} bid={item}/>
+  const elements = bids.map((item,i) => {
+    return <TableItem key={item.id} bid={item} num={i+1}/>
   })
   
   return (
@@ -14,7 +14,7 @@ const Table = () => {
       <table className="table">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>№</th>
             <th>дата</th>
             <th>продукт</th>
             <th>имя</th>
