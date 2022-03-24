@@ -1,21 +1,24 @@
-import React, {useState, useContext, useRef} from 'react';
+import React, {useState, useContext} from 'react';
 import { Link,Navigate } from 'react-router-dom';
 import { BidsbaseContext } from '../context/bidsbaseContext';
+import { useForm } from 'react-hook-form';
 import Bid from './Bid';
 
 const NewBid = () => {
   const [formIsSent, setFormIsSent] = useState(false);
   const {addBid} = useContext(BidsbaseContext);
-  const formRef = useRef(null);
+  const {register, handleSubmit, formState: {errors}} = useForm();
   
-  const handleSubmit = (event) => {
+  const onSubmit = (data, event) => {
     event.preventDefault();
-    const formData = new FormData(formRef.current);
-    formData.append('date', new Date().toLocaleDateString());
-    const bid = Object.fromEntries(formData);
+    const date = new Date().toLocaleDateString();
+    const bid = {
+      ...data,
+      date
+    }
     addBid(bid);
     setFormIsSent(prev => !prev);
-  };
+  }
   
   if(formIsSent){
     return (<Navigate to={'/'}/>)
@@ -32,14 +35,13 @@ const NewBid = () => {
       </div>
       <div className="row">
         <div className="col" id="card">
-          <form ref={formRef}>
-            <Bid/>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Bid register={register} errors={errors}/>
             <div className="row justify-content-between">
               <div className="col">
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  onClick={handleSubmit}
                 >Сохранить</button>
               </div>
             </div>

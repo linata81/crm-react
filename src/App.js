@@ -7,7 +7,6 @@ import BidsbaseState from './context/BidsbaseState';
 import './App.css';
 
 function App() {
-  
   return (
     <BidsbaseState>
       <BrowserRouter>
