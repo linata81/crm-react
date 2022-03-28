@@ -5,20 +5,21 @@ import Header from './Header';
 import Table from './Table';
 
 const AllBids = () => {
-  const {getBids} = useContext(BidsbaseContext);
+  
+  const {getBids, visibleBids} = useContext(BidsbaseContext);
   
   useEffect(() => {
     getBids();
     //eslint-disable-next-line
-  }, [])
+  }, []);
   
   return (
     <div className="main-wrapper">
       <div className="container">
         <Header/>
-        <Table/>
+        <Table bids={visibleBids}/>
         <div className="col mt-40">
-          <Link to="crm-new-bid" type="button" className="btn btn-primary" data-button-save>Создать заявку</Link>
+          <Link to="crm-new-bid" type="button" className="btn btn-primary">Создать заявку</Link>
         </div>
       </div>     
     </div>

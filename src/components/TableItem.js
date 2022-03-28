@@ -32,7 +32,7 @@ const TableItem = ({bid, num}) => {
         <div className={classNames}>{bid.status}</div>
       </td>
       <td>
-        <Link to="crm-edit-bids" className='btn btn-link'>Редактировать</Link>
+        <Link to={`crm-edit-bids/${bid.id}`} className='btn btn-link'>Редактировать</Link>
       </td>                
     </tr>
   );

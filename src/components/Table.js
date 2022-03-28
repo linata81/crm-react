@@ -1,9 +1,7 @@
-import React, {useContext} from 'react';
-import { BidsbaseContext } from '../context/bidsbaseContext';
+import React from 'react';
 import TableItem from './TableItem';
 
-const Table = () => {
-  const {bids} = useContext(BidsbaseContext);
+const Table = ({bids}) => {
 
   const elements = bids.map((item,i) => {
     return <TableItem key={item.id} bid={item} num={i+1}/>

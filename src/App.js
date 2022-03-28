@@ -14,7 +14,7 @@ function App() {
           <LeftPanel/>
           <Routes>
             <Route path='/' element={<AllBids />}/>
-            <Route path='/crm-edit-bids' element={<EditBid />}/>
+            <Route path='/crm-edit-bids/:id' element={<EditBid />}/>
             <Route path='/crm-new-bid' element={<NewBid />}/>
           </Routes>
         </div>
