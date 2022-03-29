@@ -50,6 +50,10 @@ const NewBid = () => {
                     <input
                       {...register("name", {
                       required:"Поле обязательно к заполнению",
+                      pattern: {
+                        value: /^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$/,
+                        message: 'Имя введено не корректно'
+                      },
                       minLength:{
                         value:3,
                         message: 'Минимум 3 символа'
@@ -57,6 +61,7 @@ const NewBid = () => {
                       })}
                       type="text"
                       className="form-control"
+                      placeholder='Имя клиента'
                     />
                     <div className='input_error_message'>
                       {errors?.name && <p>{errors?.name.message || "Error!"}</p>}
@@ -76,6 +81,7 @@ const NewBid = () => {
                       })}
                       type="email"
                       className="form-control"
+                      placeholder='email@domen.com'
                     />
                     <div className='input_error_message'>
                         {errors?.email && <p>{errors?.email.message || "Error!"}</p>}
@@ -95,6 +101,7 @@ const NewBid = () => {
                       })}
                       type="tel"
                       className="form-control"
+                      placeholder='+7000-00-00-000'
                     />
                     <div className='input_error_message'>
                         {errors?.phone && <p>{errors?.phone.message || "Error!"}</p>}

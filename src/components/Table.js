@@ -1,10 +1,10 @@
 import React from 'react';
 import TableItem from './TableItem';
 
-const Table = ({bids}) => {
+const Table = ({bids, currentPage, bidsPerPage}) => {
 
   const elements = bids.map((item,i) => {
-    return <TableItem key={item.id} bid={item} num={i+1}/>
+    return <TableItem key={item.id} bid={item} num={(i+1) + bidsPerPage*(currentPage-1)}/>
   })
   
   return (

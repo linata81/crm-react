@@ -210,6 +210,7 @@ body {
 }
 .table__wrap {
   border-top: 1px solid gray;
+  min-height: 524px;
 }
 .table__wrap a:hover {
   text-decoration: underline;
